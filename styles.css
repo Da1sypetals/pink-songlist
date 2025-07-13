@@ -1,0 +1,88 @@
+body {
+    background-color: #fff0f5;
+    color: #4b0039;
+    font-family: 'Baloo 2', cursive;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: #ffe4ec;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #d63384;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.filters input {
+    padding: 0.6rem 1rem;
+    border: 2px solid #ffc0cb;
+    border-radius: 12px;
+    background-color: #fffafc;
+    color: #7a0047;
+    font-family: 'Baloo 2', cursive;
+    box-shadow: 0 3px 8px rgba(255, 192, 203, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.filters input:focus {
+    outline: none;
+    border-color: #ff69b4;
+    box-shadow: 0 0 8px #ffb6c1;
+}
+
+#songList {
+    margin-top: 1rem;
+}
+
+.song {
+    background: #fff5f8;
+    border-left: 6px solid #ff69b4;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+}
+
+.song h2 {
+    margin: 0 0 0.8rem 0;
+    color: #b0005a;
+    font-size: 1.3rem;
+}
+
+.meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+.meta-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    width: 100%;
+    color: #a0005a;
+}
+
+.tag,
+.singer {
+    background-color: #ffe0ef;
+    color: #7a0047;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}

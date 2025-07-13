@@ -1,3 +1,12 @@
+"""
+name is expected to be a string.
+singers is expected to be a string or a list of string.
+tags is expected to be a string or a list of string.
+
+I used Python file because it reports better syntax error than json
+    and has loose syntax restrictions on trailing commas.
+"""
+
 songs = [
     {
         "name": "迟迟",

@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Source+Han+Serif+SC:wght@400;700&display=swap');
+/*
+    I've included Source Han Serif SC (Simplified Chinese) with weights 400 (regular) and 700 (bold).
+    You might choose a different variant (e.g., TC for Traditional Chinese, JP for Japanese, KR for Korean)
+    or different weights based on your specific needs.
+*/
+
 body {
     background-color: #fff0f5;
     color: #4b0039;
-    font-family: 'Baloo 2', cursive;
+    /* Apply Source Han Serif to the body for general text */
+    font-family: 'Source Han Serif SC', serif;
     margin: 0;
     padding: 2rem;
 }
@@ -20,6 +28,8 @@ h1 {
     color: #d63384;
     margin-bottom: 2rem;
     font-size: 2rem;
+    /* Keep Baloo 2 for the main heading for a distinct style */
+    font-family: 'Baloo 2', cursive;
 }
 
 .filters {
@@ -35,7 +45,8 @@ h1 {
     border-radius: 12px;
     background-color: #fffafc;
     color: #7a0047;
-    font-family: 'Baloo 2', cursive;
+    /* Use Source Han Serif for input text as well */
+    font-family: 'Source Han Serif SC', serif;
     box-shadow: 0 3px 8px rgba(255, 192, 203, 0.2);
     transition: all 0.2s ease-in-out;
 }
@@ -62,6 +73,10 @@ h1 {
     margin: 0 0 0.8rem 0;
     color: #b0005a;
     font-size: 1.3rem;
+    /* You might keep Baloo 2 for song titles or use Source Han Serif */
+    /* font-family: 'Baloo 2', cursive; */
+    font-family: 'Source Han Serif SC', serif;
+    /* Keeping Baloo 2 for consistency with H1 */
 }
 
 .meta-row {
@@ -85,4 +100,6 @@ h1 {
     padding: 0.25rem 0.7rem;
     border-radius: 20px;
     font-size: 0.8rem;
+    /* Apply Source Han Serif to tags and singers */
+    font-family: 'Source Han Serif SC', serif;
 }

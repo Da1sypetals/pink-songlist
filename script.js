@@ -15,13 +15,13 @@ window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('songList').innerHTML = `<p style="color: #b0005a;">⚠️ Failed to load <code>songs.json</code>.</p>`;
         });
 
-    document.getElementById('nameFilter').addEventListener('input', applyFilters); // Add this line
+    document.getElementById('nameFilter').addEventListener('input', applyFilters);
     document.getElementById('singerFilter').addEventListener('input', applyFilters);
     document.getElementById('tagFilter').addEventListener('input', applyFilters);
 });
 
 function applyFilters() {
-    const nameInput = document.getElementById('nameFilter').value.trim().toLowerCase(); // Add this line
+    const nameInput = document.getElementById('nameFilter').value.trim().toLowerCase();
     const singerInput = document.getElementById('singerFilter').value.trim().toLowerCase();
     const tagInput = document.getElementById('tagFilter').value.trim().toLowerCase();
 
@@ -30,11 +30,11 @@ function applyFilters() {
         const rawTags = song.tags;
         const tags = Array.isArray(rawTags) ? rawTags : (typeof rawTags === 'string' ? [rawTags] : []);
 
-        const nameMatch = !nameInput || song.name.toLowerCase().includes(nameInput); // Add this line
+        const nameMatch = !nameInput || song.name.toLowerCase().includes(nameInput);
         const singerMatch = !singerInput || singers.some(s => s.toLowerCase().includes(singerInput));
         const tagMatch = !tagInput || tags.some(t => t.toLowerCase().includes(tagInput));
 
-        return nameMatch && singerMatch && tagMatch; // Update this line
+        return nameMatch && singerMatch && tagMatch;
     });
 
     displaySongs(filtered);
@@ -43,6 +43,17 @@ function applyFilters() {
 function displaySongs(songs) {
     const container = document.getElementById('songList');
     container.innerHTML = '';
+
+    // Create and update the song count display
+    let songCountDisplay = document.getElementById('songCount');
+    if (!songCountDisplay) {
+        songCountDisplay = document.createElement('p');
+        songCountDisplay.id = 'songCount';
+        // Insert it right after the filters div
+        document.querySelector('.filters').insertAdjacentElement('afterend', songCountDisplay);
+    }
+    songCountDisplay.innerHTML = `Showing <b>${songs.length}</b> of <b>${allSongs.length}</b> songs.`;
+
 
     if (songs.length === 0) {
         container.innerHTML = '<p>No songs found matching your criteria.</p>';

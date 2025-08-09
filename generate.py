@@ -25,6 +25,13 @@ def main():
     for song in songs:
         normalized_name = song["name"].lower().strip()
 
+        if len(normalized_name) == 0:
+            print("\n--- EMPTY SONG DETECTED ---")
+            print("\Song Details:")
+            for key, value in song.items():
+                print(f"  {key}: {value}")
+            print("-------------------------------\n")
+
         if normalized_name in seen_names:
             # Found a duplicate! Print information for both the original and the current duplicate immediately.
             duplicate_count += 1

@@ -116,7 +116,6 @@ h1 {
 
 #removeAllFiltersBtn:active {
     background-color: #ff4d88;
-}
     border: none;
     border-radius: 12px;
     cursor: pointer;

@@ -14,9 +14,13 @@
         <h1>🎤 Songs I Can Sing</h1>
 
         <div class="filters">
-            <input type="text" id="nameFilter" placeholder="Filter by song name..." />
-            <input type="text" id="singerFilter" placeholder="Filter by singer..." />
-            <input type="text" id="tagFilter" placeholder="Filter by tag..." />
+            <div class="filter-group">
+                <input type="text" id="nameFilter" placeholder="Filter by song name..." />
+                <input type="text" id="singerFilter" placeholder="Filter by singer..." />
+                <input type="text" id="tagFilter" placeholder="Filter by tag..." />
+            </div>
+            <button id="chorusFilterBtn">Show Chorus Songs</button>
+            <button id="removeAllFiltersBtn">Remove All Filters</button>
         </div>
 
         <div id="songList"></div>

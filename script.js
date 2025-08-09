@@ -1,4 +1,5 @@
 let allSongs = [];
+let showChorusSongs = false; // New state variable
 
 window.addEventListener('DOMContentLoaded', () => {
     fetch('./songs.json')
@@ -18,7 +19,26 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nameFilter').addEventListener('input', applyFilters);
     document.getElementById('singerFilter').addEventListener('input', applyFilters);
     document.getElementById('tagFilter').addEventListener('input', applyFilters);
+
+    const chorusButton = document.getElementById('chorusFilterBtn');
+    chorusButton.addEventListener('click', () => {
+        showChorusSongs = !showChorusSongs; // Toggle the state
+        chorusButton.textContent = showChorusSongs ? 'Show All Songs' : 'Show Chorus Songs';
+        applyFilters(); // Reapply filters
+    });
+
+    const removeAllFiltersBtn = document.getElementById('removeAllFiltersBtn');
+    removeAllFiltersBtn.addEventListener('click', removeAllFilters);
 });
+
+function removeAllFilters() {
+    document.getElementById('nameFilter').value = '';
+    document.getElementById('singerFilter').value = '';
+    document.getElementById('tagFilter').value = '';
+    showChorusSongs = false;
+    document.getElementById('chorusFilterBtn').textContent = 'Show Chorus Songs';
+    applyFilters();
+}
 
 function applyFilters() {
     const nameInput = document.getElementById('nameFilter').value.trim().toLowerCase();
@@ -34,7 +54,10 @@ function applyFilters() {
         const singerMatch = !singerInput || singers.some(s => s.toLowerCase().includes(singerInput));
         const tagMatch = !tagInput || tags.some(t => t.toLowerCase().includes(tagInput));
 
-        return nameMatch && singerMatch && tagMatch;
+        // New chorus filter logic
+        const chorusMatch = !showChorusSongs || singers.length > 1;
+
+        return nameMatch && singerMatch && tagMatch && chorusMatch;
     });
 
     displaySongs(filtered);

@@ -366,7 +366,7 @@ songs = [
     {
         "name": "致：黯淡星",
         "singers": ["KBShinya", "三无Marblue"],
-        "tags": ["古风"],
+        "tags": ["崩坏"],
     },
     {
         "name": "昔言",
@@ -844,13 +844,13 @@ songs = [
         "tags": ["古风"],
     },
     {
-        "name": "逐浪飞花",
-        "singers": ["贰婶"],
+        "name": "晓秋月明",
+        "singers": ["泠鸢yousa"],
         "tags": ["古风"],
     },
     {
-        "name": "晓秋月明",
-        "singers": ["泠鸢yousa"],
+        "name": "云山尽处",
+        "singers": ["忘川风华录"],
         "tags": ["古风"],
     },
 ]

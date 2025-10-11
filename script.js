@@ -97,7 +97,7 @@ function displaySongs(songs) {
 
         const singersLabel = document.createElement('div');
         singersLabel.className = 'meta-label';
-        singersLabel.textContent = 'Singers:';
+        singersLabel.textContent = 'Reference Singers:';
         singersRow.appendChild(singersLabel);
 
         const singers = Array.isArray(song.singers) ? song.singers : [song.singers];
